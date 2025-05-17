@@ -1,0 +1,21 @@
+Szép és jó dolog a su program és végtelen változata (su1, sudo, ...), de
+ezek mind-mind hatalmas apparátust igénylő programok, melyeket mezei
+felhasználó is el tud indítani (setuid bit segítségével), pam-oznak,
+syslog-olnak, konfig fájlt olvasnak stb.
+
+A sok-sok brutális állat mellett viszont hiányzik az a félsoros aranyos kis
+program, amely egy egyszerű felület a setuid() és barátai függvényhívások
+köré, hogy a root felhasználó egyszerűen tudjon másmilyen felhasználóvá
+váltani.
+
+Nos, íme, itt van ez a program. Gyakorlatilag egy minimál program a setuid()
+hívás köré. Igazából szívesen hívnám setuid-nak a programot, de biztosan
+sokan összekevernék a setuid bittel, amely másról szól.
+
+Semmiképpen ne telepítsd setuid vagy setgid bittel, mert ez esetben máris
+bármely felhasználó root-tá tud változni. Ez a program csak azt a célt
+szolgálja, hogy a root át tudjon váltani más felhasználóvá.
+
+
+Koblinger Egmont <egmont@uhulinux.hu>
+2002. szept. 14.
